@@ -1,4 +1,4 @@
-# about-me
+# Simple boilerplate
 
 ## Project setup
 ```
