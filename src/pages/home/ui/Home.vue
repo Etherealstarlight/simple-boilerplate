@@ -2,15 +2,12 @@
   <v-container class="h-100 w-100 home__container" :style="{ 'background-position': elephantPosition }" fluid>
     <v-row>
       <v-col class="d-flex flex-column align-center">
-        <v-card class="pa-4 d-flex flex-column align-center" variant="outlined">
-          <span>About me!</span>
-          <span>{{ `Hello, I'm ${name}` }}</span>
-        </v-card>
+        <AuthorCard />
       </v-col>
     </v-row>
     <v-row>
       <v-col class="d-flex justify-center">
-        <v-btn @click="changeElephantPosition"> Click! </v-btn>
+        <Button @click="changeElephantPosition">Click!</Button>
       </v-col>
     </v-row>
   </v-container>
@@ -19,13 +16,16 @@
 <script setup>
   import { ref } from 'vue'
 
+  import { Button } from '@/components'
+
+  import { AuthorCard } from '@/modules/author'
+
   const POSITIONS = {
     LEFT: 'left bottom',
     CENTER: 'center bottom',
     RIGHT: 'right bottom',
   }
 
-  const name = ref('EtherealStarLight')
   const elephantPosition = ref(POSITIONS.LEFT)
 
   const changeElephantPosition = () => {
